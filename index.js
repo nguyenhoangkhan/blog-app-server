@@ -4,11 +4,11 @@ import cors from "cors";
 import route from "./routers/index.js";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-app.use(cors());
+const app = express();
 
+app.use(cors());
 dotenv.config();
 
-const app = express();
 const PORT = process.env.PORT || 5000;
 const URI = process.env.DB_URL;
 
