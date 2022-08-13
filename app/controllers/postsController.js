@@ -1,14 +1,13 @@
 import { postModel } from "../../models/postModel.js";
 
 class PostsController {
-  async getPosts(req, res) {
+  async index(req, res) {
     try {
       const posts = await postModel.find();
       res.status(200).json(posts);
     } catch (err) {
       res.status(500).json({ err });
     }
-    res.send("OK");
   }
   async createPost(req, res) {
     try {
