@@ -8,6 +8,7 @@ class PostsController {
     } catch (err) {
       res.status(500).json({ err });
     }
+    res.send("OK");
   }
   async createPost(req, res) {
     try {
