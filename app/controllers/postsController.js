@@ -23,7 +23,8 @@ class PostsController {
     try {
       const dataPostDelete = req.body;
       console.log("dataPostDelete", dataPostDelete);
-      await postModel.findOneAndDelete({ _id: dataPostDelete });
+      const post = await postModel.findOneAndDelete({ _id: dataPostDelete });
+      await post.save();
       res.redirect("back");
     } catch {
       res.status(500).json({ err });
