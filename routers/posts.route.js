@@ -3,6 +3,7 @@ import { postsController } from "../app/controllers/postsController.js";
 const router = express.Router();
 
 router.post("/create", postsController.createPost);
+router.post("/delete", postsController.deletePost);
 router.post("/update", postsController.updatePost);
 router.get("/", postsController.getPost);
 
