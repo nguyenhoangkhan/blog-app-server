@@ -6,9 +6,12 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
 const app = express();
-
+const methodOverride = require("method-override");
 const PORT = process.env.PORT || 5000;
 const URI = process.env.DB_URL;
+
+// Override with POST method
+app.use(methodOverride("_method"));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
