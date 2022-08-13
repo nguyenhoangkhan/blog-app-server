@@ -22,6 +22,7 @@ class PostsController {
   async deletePost(req, res) {
     try {
       const dataPostDelete = req.body;
+      console.log("dataPostDelete", dataPostDelete);
       await postModel.findOneAndDelete({ _id: dataPostDelete });
       res.redirect("back");
     } catch {
