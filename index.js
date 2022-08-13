@@ -21,7 +21,7 @@ const URI = process.env.DB_URL;
 // Override with POST method
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 
 // Config Routes
 route(app);
