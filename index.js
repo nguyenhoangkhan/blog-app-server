@@ -4,7 +4,10 @@ import cors from "cors";
 import route from "./routers/index.js";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+app.use(cors());
+
 dotenv.config();
+
 const app = express();
 const methodOverride = require("method-override");
 const PORT = process.env.PORT || 5000;
@@ -15,8 +18,6 @@ app.use(methodOverride("_method"));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-app.use(cors());
 
 // Config Routes
 route(app);

@@ -24,7 +24,6 @@ class PostsController {
       const dataPostDelete = req.body;
       await postModel.findOneAndDelete({ _id: dataPostDelete });
       res.redirect("back");
-      res.status(200).json(post);
     } catch {
       res.status(500).json({ err });
     }
