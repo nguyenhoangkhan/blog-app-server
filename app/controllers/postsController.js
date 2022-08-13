@@ -1,7 +1,7 @@
 import { postModel } from "../../models/postModel.js";
 
 class PostsController {
-  async index(req, res) {
+  async getPost(req, res) {
     try {
       const posts = await postModel.find();
       res.status(200).json(posts);
